@@ -1,0 +1,15 @@
+body{
+    width: 350px;
+    height: 80vh;
+    background-color: white;
+    border: 1px solid black;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    /* margin: auto auto; */
+    border: 1px solid black;
+}
