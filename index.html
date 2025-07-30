@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="container">
-        <h1>To Do App</h1>
-        <input type="text" id="task">
-        <button>ADD</button>
-        <ul class="list" id="list">
+        <div class="main">
+            <h1 style="width: 100%; text-align: center;">To Do App</h1>
+            <input type="text" placeholder="Add your task" id="task" onkeydown="addTaskEnter(event)">
+            <i class="fa-solid fa-add" onclick="addTask()"></i>
 
+        </div>
+        <ul class="list" id="list">
+            <h1 style="text-align: center;">TASKS LIST</h1>
         </ul>
     </div>
+    <script src="app.js"></script>
 </body>
 </html>
