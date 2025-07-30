@@ -4,8 +4,8 @@ var list = document.getElementById("list");
 
 function addTask(){
    list.innerHTML += `<li><input type='text' value='${task.value}' disabled>
-   <i class='fa-solid fa-edit' onclick='editTask(event)'></i>
-   <i class='fa-solid fa-trash' onclick='deleteTask(event)'></i></li>`;
+   <i class='fa-solid fa-edit' onclick='editTask(event)' style="background-color: green"></i>
+   <i class='fa-solid fa-trash' onclick='deleteTask(event)' style="background-color: red"></i></li>`;
    task.value = "";
 }
 function addTaskEnter(event){
