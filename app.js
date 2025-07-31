@@ -1,5 +1,4 @@
 var task = document.getElementById("task");
-var add_btn = document.getElementById("add-btn");
 var list = document.getElementById("list");
 
 function addTask(){
@@ -20,12 +19,14 @@ function editTask(event){
     var input = event.target.parentNode.firstChild;
     input.disabled = false;
     input.focus();
+    input.style.borderBottom = "2px solid black";
     event.target.className = "fa-solid fa-check";
     event.target.setAttribute('onclick','updateTask(event)');
 }
 function updateTask(event){
     var input = event.target.parentNode.firstChild;
     input.disabled = true;
+    input.style.borderBottom = "none";
     event.target.className = "fa-solid fa-edit";
     event.target.setAttribute('onclick','editTask(event)');
 }
