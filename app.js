@@ -106,7 +106,7 @@
 
         // actions
         const actions = document.createElement('div'); actions.className = 'actions';
-        const editBtn = document.createElement('button'); editBtn.className = 'icon-btn'; editBtn.innerHTML = '<i class="fa-regular fa-pen-to-square"></i>';
+        const editBtn = document.createElement('button'); editBtn.className = 'icon-btn success'; editBtn.innerHTML = '<i class="fa-regular fa-pen-to-square"></i>';
         editBtn.onclick = () => {
           const newText = prompt('Edit task', t.text);
           if(newText !== null) editTask(t.id, newText.trim());
