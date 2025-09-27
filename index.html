@@ -1,27 +1,100 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do App</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
-        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Todo UI — Responsive (with Dark Mode)</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <div class="container">
-        <div class="main">
-            <h1 style="width: 100%; text-align: center;">To Do App</h1>
-            <input type="text" placeholder="Add your task" id="task" onkeydown="addTaskEnter(event)">
-            <i class="fa-solid fa-add" onclick="addTask()"></i>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">TD</div>
+        <div>
+          <h1>Todo UI — Responsive</h1>
+          <p class="lead">Pure HTML/CSS/JS UI — Font Awesome icons used</p>
         </div>
-        <ul class="list" id="list">
-            <h1 style="text-align: center;">TASKS LIST</h1>
-        </ul>
+      </div>
+
+      <div class="header-controls">
+        <button class="btn ghost" id="importBtn"><i class="fa-solid fa-file-import"></i> Import</button>
+        <button class="btn" id="exportBtn"><i class="fa-solid fa-file-export"></i> Export</button>
+        <button class="theme-toggle" id="themeToggle" title="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+      </div>
+    </header>
+
+    <div class="grid">
+      <div>
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+            <strong>My Tasks</strong>
+            <small class="meta" id="dateNow"></small>
+          </div>
+
+          <div class="add-row" style="margin-bottom:12px">
+            <input id="todoInput" class="input" placeholder="Add a new task..." />
+            <button class="btn" id="addBtn" title="Add task"><i class="fa-solid fa-plus"></i></button>
+          </div>
+
+          <div style="display:flex;gap:8px;align-items:center;margin-bottom:12px">
+            <input class="search" id="searchInput" placeholder="Search tasks..." />
+            <select class="input" id="filterSelect" style="max-width:140px">
+              <option value="all">All</option>
+              <option value="active">Active</option>
+              <option value="completed">Completed</option>
+            </select>
+            <select class="input" id="sortSelect" style="max-width:140px">
+              <option value="newest">Newest</option>
+              <option value="oldest">Oldest</option>
+              <option value="alpha">A → Z</option>
+            </select>
+          </div>
+
+          <div class="list" id="todoList"></div>
+
+          <div style="margin-top:12px;display:flex;justify-content:space-between;align-items:center">
+            <div class="meta" id="countMeta">0 tasks</div>
+            <div>
+              <button class="btn ghost" id="clearCompleted"><i class="fa-solid fa-trash-can"></i> Clear Completed</button>
+            </div>
+          </div>
+        </div>
+
+        <footer style="margin-top:12px">Tip: This is UI-only. Replace persistence with your backend.</footer>
+      </div>
+
+      <aside>
+        <div class="panel">
+          <div class="card stats">
+            <div class="stat"><small>Total</small><strong id="statTotal">0</strong></div>
+            <div class="stat"><small>Active</small><strong id="statActive">0</strong></div>
+            <div class="stat"><small>Completed</small><strong id="statComplete">0</strong></div>
+          </div>
+
+          <div class="card">
+            <h4 style="margin-top:0">Quick Filters</h4>
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <button class="btn ghost quick-filter" data-filter="all">All</button>
+              <button class="btn ghost quick-filter" data-filter="active">Active</button>
+              <button class="btn ghost quick-filter" data-filter="completed">Completed</button>
+              <button class="btn ghost" id="focusSearch"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+            </div>
+          </div>
+
+          <div class="card empty" style="text-align:left">
+            <h4 style="margin:6px 0">Empty State</h4>
+            <p class="meta">When there are no tasks, show friendly guidance, actions, or suggested tasks here.</p>
+            <div style="margin-top:10px">
+              <button class="btn" id="addSample">Add sample tasks</button>
+            </div>
+          </div>
+        </div>
+      </aside>
     </div>
-    <script src="app.js"></script>
+  </div>
+  <script src="app.js"></script>
 </body>
 </html>
