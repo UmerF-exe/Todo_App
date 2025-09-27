@@ -115,7 +115,6 @@
       </footer>
     </div>
   </div>
-  <script src="./app.js"></script>
   <script>
   const hamburger = document.getElementById("hamburgerBtn");
 const controls = document.getElementById("headerControls");
@@ -134,7 +133,8 @@ hamburger.addEventListener("click", () => {
     icon.classList.add("fa-bars"); // back to hamburger
   }
 });
-
 </script>
+  <script type="module" src="./firebase.js"></script>
+  <script src="./app.js" type="module"></script>
 </body>
 </html>
