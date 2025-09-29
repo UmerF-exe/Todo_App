@@ -3,7 +3,8 @@
 // Keep this file as a module (you already include it with type="module").
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-firestore.js";
+import { getFirestore, collection, addDoc, doc, deleteDoc, updateDoc, onSnapshot} from "https://www.gstatic.com/firebasejs/12.3.0/firebase-firestore.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, signOut}  from "https://www.gstatic.com/firebasejs/12.3.0/firebase-auth.js";
 
  const firebaseConfig = {
     apiKey: "AIzaSyDbV8pM7R1wk04rBKJ6Fggk_DmQoTRPT_Y",
@@ -15,6 +16,9 @@ import { getFirestore } from "https://www.gstatic.com/firebasejs/12.3.0/firebase
   };
 
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider(auth);
 const db = getFirestore(app);
 
-export { db };
+export { auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail, onAuthStateChanged, provider, signInWithPopup, signOut };
+export { db, collection, addDoc, doc, deleteDoc, updateDoc, onSnapshot};
