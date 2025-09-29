@@ -274,7 +274,7 @@ p.lead {
   .stat strong{ font-size: 16px;}
 }
 
-@media (max-width: 520px) {
+@media (max-width: 600px) {
   .logo { width: 44px; height: 44px; font-size: 16px; }
   h1 { font-size: 18px; }
   p.lead { font-size: 12px; }
